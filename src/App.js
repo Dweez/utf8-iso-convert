@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './App.css'
 
-import useConverted from './useConverted'
+import Converter from './components/converter'
 
 function App() {
-  const [ input, setInput ] = useState('')
-
-  const converted = useConverted(input)
-
   return (
     <div className="App">
-      <input value={input} onChange={event => setInput(event.target.value)} />
-      <h3>{converted}</h3>
+      <div className="container">
+        <h2>Conversion ISO-8859-1 / UTF-8</h2>
+        <p>Vous venez d'ouvrir un fichier et vous découvrez avec stupeur des caractères étranges (ex: Ã©, Ã®) à la place des caractères accentués ?<br/>
+        Ce petit convertisseur pourrait vous sauver la mise ! Collez votre texte dans le champs de gauche et récupérez le résultat à droite.</p>
+        <Converter />
+      </div>
     </div>
   );
 }

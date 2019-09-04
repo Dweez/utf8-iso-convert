@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useConverted = input => {
+const useConverter = input => {
   const [ converted, setConverted ] = useState(input)
 
   useEffect( () => {
@@ -22,4 +22,4 @@ const useConverted = input => {
   return converted
 }
 
-export default useConverted
+export default useConverter
