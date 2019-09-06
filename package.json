@@ -1,6 +1,18 @@
 {
-  "name": "utf8-iso",
+  "name": "utf8-iso-convert",
   "version": "0.1.0",
+  "description": "UTF-8 <> ISO-8859-1 conversion tool",
+  "keywords": [
+    "react",
+    "converter",
+    "string",
+    "utf-8",
+    "iso-8859-1"
+  ],
+  "author": {
+    "name": "dweez",
+    "url": "https://dweez.com"
+  },
   "private": true,
   "dependencies": {
     "react": "^16.9.0",
