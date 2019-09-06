@@ -31,7 +31,8 @@ function Converter() {
         >
           ISO-8859-1 → UTF-8
         </button>
-        {mixed ? "mixed !" : ""}
+        <p className={`description ${mixed ? "mixed" : ""}`}>{mixed ? "mixed !" : `On encode en ${input[0]}`}</p>
+        
       </div>
       <div className="converter">
         <textarea

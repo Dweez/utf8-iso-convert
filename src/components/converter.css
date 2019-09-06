@@ -1,3 +1,9 @@
+.description {
+  margin-bottom: 0;
+}
+.description.mixed {
+  color: #b90f56;
+}
 .converter{
   display: flex;
   width: 70%;
