@@ -13,11 +13,17 @@ const labels = {
   iso: "ISO-8859-1"
 }
 
-const Description = ({ code }) => {
+const Description = ({ code, mixed }) => {
   return (
     <>
-      Editez votre texte en <code>${labels[code]}</code> dans le champ gauche
-      ci-dessous
+      {!mixed ? (
+        <>
+          Editez votre texte <code>{labels[code]}</code> dans le champ gauche
+          ci-dessous
+        </>
+      ) : (
+        <>Mixed content !</>
+      )}
     </>
   )
 }
@@ -27,7 +33,7 @@ const Converter = () => {
   const { converted, mixed } = useConverter(input)
   return (
     <>
-      <div>
+      <div className="actions">
         <button
           onClick={event => setInput(["utf", converted])}
           // disabled={(input[0] === "utf" || mixed)}
@@ -44,10 +50,10 @@ const Converter = () => {
         >
           ISO-8859-1 → UTF-8
         </button>
-        <p className={`description ${mixed ? "mixed" : ""}`}>
-          {mixed ? "mixed !" : <Description code={input[0]} />}
-        </p>
       </div>
+      <p className={`description ${mixed ? "mixed" : ""}`}>
+        <Description mixed={mixed} code={input[0]} />
+      </p>
       <div className="converter">
         <textarea
           className="textarea"
