@@ -67,7 +67,7 @@ const Converter = () => {
           onClick={event => setInput([input[0], target[input[0]]])}
           disabled={input[1] === target[input[0]]}
         >
-          Texte par défaut
+          {`Texte ${input[0]} par défaut`}
         </button>
         <button onClick={event => setInput([input[0], ""])}>Clear</button>
       </div>

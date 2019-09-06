@@ -27,13 +27,11 @@
   min-height: 100px;
   outline: none;
   overflow: auto;
-  /* border: 2px solid rgba(255,255,255,.5); */
   border: 2px solid rgba(86, 122, 205,.5);
   font-size: .9rem;
   padding: .25em .5em .3125em;
   color: rgba(255,255,255,.5);
   border-radius: .25em;
-  /* background: transparent; */
   background: rgba(12, 20, 39, 0.2);
   transition :all .100s;
 }
