@@ -28,7 +28,7 @@
   outline: none;
   overflow: auto;
   border: 2px solid rgba(86, 122, 205,.5);
-  font-size: .9rem;
+  font-size: calc(10px + 1vmin);
   padding: .25em .5em .3125em;
   color: rgba(255,255,255,.5);
   border-radius: .25em;
@@ -42,7 +42,8 @@
 .result{
   margin: 1rem;
   width: 50%;
-  font-size: 1rem;
+  font-size: calc(11px + 1vmin);
+  line-height: calc(11px + 2vmin);
   color: #fff;
   white-space: pre-wrap;
 }
