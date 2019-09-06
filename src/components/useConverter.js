@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 
 const useConverter = input => {
-  const [converted, setConverted] = useState()
+  const [converted, setConverted] = useState("")
   const [mixed, setMixed] = useState(false)
 
   useEffect(() => {
