@@ -19,15 +19,17 @@ function Converter() {
           onClick={event => setInput(["utf", converted])}
           // disabled={(input[0] === "utf" || mixed)}
           disabled={input[0] === "utf"}
+          className={input[0] === "utf" ? "selected" : ""}
         >
-          UTF-8 >> ISO-8859-1
+          UTF-8 → ISO-8859-1
         </button>
         <button
           onClick={event => setInput(["iso", converted])}
           // disabled={(input[0] === "iso" || mixed)}
           disabled={input[0] === "iso"}
+          className={input[0] === "iso" ? "selected" : ""}
         >
-          ISO-8859-1 >> UTF-8
+          ISO-8859-1 → UTF-8
         </button>
         {mixed ? "mixed !" : ""}
       </div>
