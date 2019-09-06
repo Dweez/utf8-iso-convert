@@ -33,6 +33,13 @@ const Converter = () => {
   const { converted, mixed } = useConverter(input)
   return (
     <>
+      <h2>
+        {input[0] === "utf" ? (
+          <>{`Conversion ${labels.utf} → ${labels.iso}`}</>
+        ) : (
+          <>{`Conversion ${labels.iso} → ${labels.utf}`}</>
+        )}
+      </h2>
       <div className="actions">
         <button
           onClick={event => setInput(["utf", converted])}
