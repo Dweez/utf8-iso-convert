@@ -47,13 +47,13 @@ const Converter = () => {
 
   return (
     <>
-      <h2>
+      <h1>
         {input[0] === "utf" ? (
           <>{`${labels.utf} → ${labels.iso} Conversion tool`}</>
         ) : (
           <>{`${labels.iso} → ${labels.utf} Conversion tool`}</>
         )}
-      </h2>
+      </h1>
       <div className="actions">
         <button
           onClick={event => setInput(["utf", converted])}
@@ -81,6 +81,7 @@ const Converter = () => {
             className="textarea"
             value={input[1]}
             onChange={event => setInput([input[0], event.target.value])}
+            spellcheck="false"
           />
         </div>
         <div className="result-container">
@@ -92,6 +93,8 @@ const Converter = () => {
             ref={resultRef}
             value={converted}
             onChange={() => {}}
+            readonly
+            spellcheck="false"
           />
         </div>
       </div>

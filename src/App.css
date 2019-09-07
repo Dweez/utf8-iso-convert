@@ -1,9 +1,10 @@
 .App {
   text-align: center;
 }
-h2 {
+h1 {
   /* color: #fff; */
   color: rgba(86, 122, 205, 1);
+  font-size: calc(20px + 3vmin);
 }
 .converter-container {
   background-color: #282c34;
