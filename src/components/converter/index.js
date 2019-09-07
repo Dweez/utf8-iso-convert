@@ -84,6 +84,7 @@ const Converter = () => {
             spellCheck="false"
           />
         </div>
+        <div className="separator"></div>
         <div className="result-container">
           <div className={`copy-status ${copySuccess ? "copied" : ""}`}>
             Copied !
