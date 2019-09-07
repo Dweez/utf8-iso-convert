@@ -1,14 +1,17 @@
 .App {
   text-align: center;
+  background: linear-gradient(0deg, #282c34 30%, #343f55 70%);
 }
 h1 {
   /* color: #fff; */
-  color: rgba(86, 122, 205, 1);
+  color: rgba(223, 230, 244, 0.7);
   font-size: calc(20px + 3vmin);
+  text-shadow: 0 0 4px #567acd;
 }
 .converter-container {
   /* background-color: #282c34; */
-  background: url(/mozaic_60.png), linear-gradient(0deg, #282c34 30%, #343f55 70%) no-repeat center center / cover fixed;
+  background-image: url(/mozaic_60.png);
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
