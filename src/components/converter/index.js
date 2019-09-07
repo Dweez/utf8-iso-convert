@@ -8,6 +8,7 @@ const target = {
   utf: `Portez ce vieux whisky au juge blond qui fume sur son Ã®le intÃ©rieure, Ã  cÃ´tÃ© de l'alcÃ´ve ovoÃ¯de, oÃ¹ les bÃ»ches se consument dans l'Ã¢tre, ce qui lui permet de penser Ã  la cÃ¦nogÃ©nÃ¨se de l'Ãªtre dont il est question dans la cause ambiguÃ« entendue Ã  MoÃ¿, dans un capharnaÃ¼m qui, pense-t-il, diminue Ã§Ã  et lÃ  la qualitÃ© de son Åuvre.`,
   iso: `Portez ce vieux whisky au juge blond qui fume sur son île intérieure, à côté de l'alcôve ovoïde, où les bûches se consument dans l'âtre, ce qui lui permet de penser à la cænogénèse de l'être dont il est question dans la cause ambiguë entendue à Moÿ, dans un capharnaüm qui, pense-t-il, diminue çà et là la qualité de son œuvre.`
 }
+
 const labels = {
   utf: "UTF-8",
   iso: "ISO-8859-1"
@@ -30,25 +31,25 @@ const Description = ({ code, mixed }) => {
 const Converter = () => {
   const [input, setInput] = useState(["utf", target.utf])
   const { converted, mixed } = useConverter(input)
-  
+
   const [copySuccess, setCopySuccess] = useState(false)
   const resultRef = useRef(null)
-  
+
   const copyResult = e => {
-    resultRef.current.select();
-    document.execCommand('copy');
-    // focus triggé sur le bouton, émetteur de l'event, pour ne pas se retrouver 
+    resultRef.current.select()
+    document.execCommand("copy")
+    // focus triggé sur le bouton, émetteur de l'event, pour ne pas se retrouver
     // avec le contenu sélectionné dans le textarea resultRef
-    e.target.focus();
-    setCopySuccess(true);
-    setTimeout( () => setCopySuccess(false), 4000)
+    e.target.focus()
+    setCopySuccess(true)
+    setTimeout(() => setCopySuccess(false), 4000)
   }
-  
+
   return (
     <>
       <h2>
         {input[0] === "utf" ? (
-          <>{`${labels.utf} → ${labels.iso} Conversion tool`}</>  
+          <>{`${labels.utf} → ${labels.iso} Conversion tool`}</>
         ) : (
           <>{`${labels.iso} → ${labels.utf} Conversion tool`}</>
         )}
@@ -83,7 +84,9 @@ const Converter = () => {
           />
         </div>
         <div className="result-container">
-          <div className={`copy-status ${copySuccess ? "copied" : ""}`}>Copied !</div>
+          <div className={`copy-status ${copySuccess ? "copied" : ""}`}>
+            Copied !
+          </div>
           <textarea
             className="result"
             ref={resultRef}
@@ -100,7 +103,9 @@ const Converter = () => {
           {`${labels[input[0]]} default text`}
         </button>
         <button onClick={event => setInput([input[0], ""])}>Clear</button>
-        <button onClick={event => copyResult(event)} disabled={(mixed)}>Copy</button>
+        <button onClick={event => copyResult(event)} disabled={mixed}>
+          Copy
+        </button>
       </div>
     </>
   )
