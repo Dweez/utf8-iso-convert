@@ -18,8 +18,7 @@ const Description = ({ code, mixed }) => {
     <>
       {!mixed ? (
         <>
-          Editez votre texte <code>{labels[code]}</code> dans le champ gauche
-          ci-dessous
+          Paste or edit your <code>{labels[code]}</code> text in the left field
         </>
       ) : (
         <>Mixed content !</>
@@ -32,7 +31,7 @@ const Converter = () => {
   const [input, setInput] = useState(["utf", target.utf])
   const { converted, mixed } = useConverter(input)
   
-  const [copySuccess, setCopySuccess] = useState('')
+  const [copySuccess, setCopySuccess] = useState(false)
   const resultRef = useRef(null)
   
   const copyResult = e => {
@@ -41,17 +40,17 @@ const Converter = () => {
     // focus triggé sur le bouton, émetteur de l'event, pour ne pas se retrouver 
     // avec le contenu sélectionné dans le textarea resultRef
     e.target.focus();
-    setCopySuccess('Copied !');
-    setTimeout( () => setCopySuccess(''), 4000)
+    setCopySuccess(true);
+    setTimeout( () => setCopySuccess(false), 4000)
   }
   
   return (
     <>
       <h2>
         {input[0] === "utf" ? (
-          <>{`Conversion ${labels.utf} → ${labels.iso}`}</>
+          <>{`${labels.utf} → ${labels.iso} Conversion tool`}</>  
         ) : (
-          <>{`Conversion ${labels.iso} → ${labels.utf}`}</>
+          <>{`${labels.iso} → ${labels.utf} Conversion tool`}</>
         )}
       </h2>
       <div className="actions">
@@ -83,9 +82,8 @@ const Converter = () => {
             onChange={event => setInput([input[0], event.target.value])}
           />
         </div>
-        {/*<div className="result" onClick={copyResult}>{converted}</div>*/}
         <div className="result-container">
-          {copySuccess && <div className="copy-status">{copySuccess}</div>}
+          <div className={`copy-status ${copySuccess ? "copied" : ""}`}>Copied !</div>
           <textarea
             className="result"
             ref={resultRef}
@@ -99,7 +97,7 @@ const Converter = () => {
           onClick={event => setInput([input[0], target[input[0]]])}
           disabled={input[1] === target[input[0]]}
         >
-          {`Texte ${input[0]} par défaut`}
+          {`${labels[input[0]]} default text`}
         </button>
         <button onClick={event => setInput([input[0], ""])}>Clear</button>
         <button onClick={event => copyResult(event)} disabled={(mixed)}>Copy</button>

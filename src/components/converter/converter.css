@@ -17,7 +17,7 @@
 }
 .converter{
   display: flex;
-  width: 70%;
+  width: 80%;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -35,7 +35,8 @@
   outline: none;
   overflow: auto;
   border: 2px solid rgba(86, 122, 205,.5);
-  font-size: .7em;
+  /* font-size: .7em; */
+  font-size: calc(10px + 1vmin);
   padding: .25em .5em .3125em;
   color: rgba(255,255,255,.8);
   border-radius: .25em;
@@ -67,6 +68,11 @@
   color: #fff;
   right: 0;
   padding: .5rem;
+  opacity: 0;
+  transition :all .300s;
+}
+.copy-status.copied {
+  opacity: 1;
 }
 button {
   border: 2px solid #ddd;
