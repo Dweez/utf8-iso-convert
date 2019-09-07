@@ -36,7 +36,8 @@
   /* font-size: calc(10px + 1vmin); */
   font-size: .7em;
   padding: .25em .5em .3125em;
-  color: rgba(255,255,255,.5);
+  /* color: rgba(255,255,255,.5); */
+  color: rgba(255,255,255,.8);
   border-radius: .25em;
   background: rgba(12, 20, 39, 0.2);
   transition :all .100s;

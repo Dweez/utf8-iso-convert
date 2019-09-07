@@ -6,7 +6,7 @@ import Converter from './components/converter'
 function App() {
   return (
     <div className="App">
-      <div className="container">
+      <div className="converter-container">
         <Converter />
       </div>
     </div>
