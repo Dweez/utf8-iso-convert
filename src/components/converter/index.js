@@ -102,7 +102,7 @@ const Converter = () => {
           {`Texte ${input[0]} par défaut`}
         </button>
         <button onClick={event => setInput([input[0], ""])}>Clear</button>
-        <button onClick={event => copyResult(event)} disabled={(mixed)}>COPY</button>
+        <button onClick={event => copyResult(event)} disabled={(mixed)}>Copy</button>
       </div>
     </>
   )
