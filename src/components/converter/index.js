@@ -81,7 +81,7 @@ const Converter = () => {
             className="textarea"
             value={input[1]}
             onChange={event => setInput([input[0], event.target.value])}
-            spellcheck="false"
+            spellCheck="false"
           />
         </div>
         <div className="result-container">
@@ -93,8 +93,7 @@ const Converter = () => {
             ref={resultRef}
             value={converted}
             onChange={() => {}}
-            readonly
-            spellcheck="false"
+            spellCheck="false"
           />
         </div>
       </div>
