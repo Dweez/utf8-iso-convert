@@ -4,6 +4,7 @@
   "description": "UTF-8 <> ISO-8859-1 conversion tool",
   "keywords": [
     "react",
+    "hook",
     "converter",
     "string",
     "utf-8",
