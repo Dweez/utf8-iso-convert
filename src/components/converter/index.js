@@ -46,7 +46,7 @@ const Converter = () => {
   }
 
   return (
-    <>
+    <div className="main">
       <h1>
         {input[0] === "utf" ? (
           <>{`${labels.utf} → ${labels.iso} Conversion tool`}</>
@@ -110,7 +110,7 @@ const Converter = () => {
           Copy
         </button>
       </div>
-    </>
+    </div>
   )
 }
 
