@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
 
 import useConverter from "./useConverter"
 
@@ -31,6 +31,20 @@ const Description = ({ code, mixed }) => {
 const Converter = () => {
   const [input, setInput] = useState(["utf", target.utf])
   const { converted, mixed } = useConverter(input)
+  
+  const [copySuccess, setCopySuccess] = useState('')
+  const resultRef = useRef(null)
+  
+  const copyResult = e => {
+    resultRef.current.select();
+    document.execCommand('copy');
+    // focus triggé sur le bouton, émetteur de l'event, pour ne pas se retrouver 
+    // avec le contenu sélectionné dans le textarea resultRef
+    e.target.focus();
+    setCopySuccess('Copied !');
+    setTimeout( () => setCopySuccess(''), 4000)
+  }
+  
   return (
     <>
       <h2>
@@ -62,12 +76,23 @@ const Converter = () => {
         <Description mixed={mixed} code={input[0]} />
       </p>
       <div className="converter">
-        <textarea
-          className="textarea"
-          value={input[1]}
-          onChange={event => setInput([input[0], event.target.value])}
-        />
-        <div className="result">{converted}</div>
+        <div className="textarea-container">
+          <textarea
+            className="textarea"
+            value={input[1]}
+            onChange={event => setInput([input[0], event.target.value])}
+          />
+        </div>
+        {/*<div className="result" onClick={copyResult}>{converted}</div>*/}
+        <div className="result-container">
+          {copySuccess && <div className="copy-status">{copySuccess}</div>}
+          <textarea
+            className="result"
+            ref={resultRef}
+            value={converted}
+            onChange={() => {}}
+          />
+        </div>
       </div>
       <div>
         <button
@@ -77,6 +102,7 @@ const Converter = () => {
           {`Texte ${input[0]} par défaut`}
         </button>
         <button onClick={event => setInput([input[0], ""])}>Clear</button>
+        <button onClick={event => copyResult(event)} disabled={(mixed)}>COPY</button>
       </div>
     </>
   )
