@@ -47,10 +47,8 @@ const Converter = () => {
 
   const inIframe = () => {
     try {
-      console.log("try", window.self !== window.top);
       return window.self !== window.top
     } catch (e) {
-      console.log("catch");
       return true
     }
   }
