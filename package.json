@@ -1,6 +1,6 @@
 {
   "name": "utf8-iso-convert",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "UTF-8 <> ISO-8859-1 conversion tool",
   "keywords": [
     "react",
@@ -15,10 +15,10 @@
   },
   "private": true,
   "dependencies": {
-    "eslint-utils": "^2.0.0",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "react-scripts": "^3.4.0"
+    "eslint-utils": "^2.1.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
